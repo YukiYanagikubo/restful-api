@@ -1,25 +1,45 @@
-[<img src="https://img.shields.io/travis/playframework/play-java-ebean-example.svg"/>](https://travis-ci.org/playframework/play-java-ebean-example)
+#使用した技術要素
 
-# play-java-ebean-example
+java 1.8.0_172
+play framework 2.6
+＃全体の設計・構成について
 
-This is an example Play application that uses Java, and communicates with an in memory database using EBean.
+##ディレクトリの構成
+```
+app
+ ├-models
+ |   └-Product.java     //Productモデル
+ |
+ ├-controllers
+ |       └-ProductController.java   //コントローラー
+ |
+ └conf
+    └-routes   //各アクションへのパス
+```
 
-The Github location for this project is:
+##APIについて
 
-[https://github.com/playframework/play-java-ebean-example](https://github.com/playframework/play-java-ebean-example)
+メソッド        URL                 機能
+****************************************
+GET           /products           商品一覧取得
+POST          /products           一件の商品を登録
+GET           /products/search    商品の検索
+PUT           /products/:id       選択した商品の編集
+DELETE        /products/:id　　　　選択した商品を削除
 
-## Play
 
-Play documentation is here:
+#開発環境のセットアップ手順 ##javaのインストール
 
-[https://playframework.com/documentation/latest/Home](https://playframework.com/documentation/latest/Home)
+brew cask install java8
+export JAVA_HOME=`/usr/libexec/java_home -v 1.8
+##sbtのインストール
 
-## EBean
+brew install sbt
+##playのインストール
 
-EBean is a Java ORM library that uses SQL:
+https://github.com/YukiYanagikubo/restful-api.git
+cd restful-api
+##playの起動
 
-[https://www.playframework.com/documentation/latest/JavaEbean](https://www.playframework.com/documentation/latest/JavaEbean)
+sbt run
 
-and the documentation can be found here:
-
-[https://ebean-orm.github.io/](https://ebean-orm.github.io/)
